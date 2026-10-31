@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "com.yasminagbreil.metro"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.yasminagbreil.metro"
