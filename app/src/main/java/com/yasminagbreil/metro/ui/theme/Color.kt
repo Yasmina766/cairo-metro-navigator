@@ -12,7 +12,7 @@ val TextLight = Color(0xFF1F2937)
 val BackgroundDark = Color(0xFF0F172A)
 val SurfaceDark = Color(0xFF1E293B)
 val TextDark = Color(0xFFF1F5F9)
-val PrimaryDark = Color(0xFF93B4F5)
+val PrimaryDark = Color(0xFF1E88E5)
 
 // Metro lines
 val Line1Blue = Color(0xFF1E88E5)
