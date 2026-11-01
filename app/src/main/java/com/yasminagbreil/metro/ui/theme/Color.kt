@@ -21,3 +21,8 @@ val Line3Green = Color(0xFF43A047)
 
 // Error
 val ErrorRed = Color(0xFFE53935)
+
+// LineDot
+val blue = Color(0xFF1E88E5)
+val red = Color(0xFFE53935)
+val green = Color(0xFF43A047)
