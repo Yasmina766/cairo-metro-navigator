@@ -18,28 +18,51 @@ class HomeViewModel @Inject constructor(
 
     init {
         val stations = repository.stationNames()
+        val from = stations.getOrElse(0) { "" }
+        val to = stations.getOrElse(2) { "" }
         _uiState.value = HomeUiState(
             stations = stations,
-            from = stations.getOrElse(0) { "" },
-            to = stations.getOrElse(2) { "" }
+            from = from,
+            to = to,
+            fromLines = repository.linesOf(from),
+            toLines = repository.linesOf(to)
         )
     }
 
     fun onFromSelected(station: String) {
-        _uiState.update { it.copy(from = station, sameStationError = false) }
+        _uiState.update {
+            it.copy(
+                from = station,
+                fromLines = repository.linesOf(station),
+                sameStationError = false
+            )
+        }
     }
 
     fun onToSelected(station: String) {
-        _uiState.update { it.copy(to = station, sameStationError = false) }
+        _uiState.update {
+            it.copy(
+                to = station,
+                toLines = repository.linesOf(station),
+                sameStationError = false
+            )
+        }
     }
 
     fun onSwapClicked() {
-        _uiState.update { it.copy(from = it.to, to = it.from, sameStationError = false) }
+        _uiState.update {
+            it.copy(
+                from = it.to, to = it.from,
+                fromLines = it.toLines,
+                toLines = it.fromLines,
+                sameStationError = false
+            )
+        }
     }
 
-    fun onFindRouteClicked(): Boolean{
-        val state=_uiState.value
-        val isSame= state.from==state.to
+    fun onFindRouteClicked(): Boolean {
+        val state = _uiState.value
+        val isSame = state.from == state.to
         _uiState.update { it.copy(sameStationError = isSame) }
         return !isSame
     }
