@@ -13,7 +13,23 @@ class FakeMetroRepository @Inject constructor() : MetroRepository {
         "Attaba", "Cairo University", "Giza", "Shubra El Kheima", "Dokki"
     )
 
+    private val stationLines = mapOf(
+        "Helwan" to listOf(1),
+        "Maadi" to listOf(1),
+        "Sadat" to listOf(1, 2),
+        "Shohadaa" to listOf(1, 2),
+        "El Marg" to listOf(1),
+        "Attaba" to listOf(2, 3),
+        "Cairo University" to listOf(2),
+        "Giza" to listOf(2),
+        "Shubra El Kheima" to listOf(2),
+        "Dokki" to listOf(2)
+    )
+
     override fun stationNames(): List<String> = stations
+
+    override fun linesOf(station: String): List<Int> =
+    stationLines[station].orEmpty()
 
     override fun lineColorHex(lineId: Int): String = when (lineId) {
         1 -> "#1E88E5"
