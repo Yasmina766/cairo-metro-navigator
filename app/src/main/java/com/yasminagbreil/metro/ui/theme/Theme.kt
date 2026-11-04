@@ -10,21 +10,39 @@ import androidx.compose.ui.graphics.Color
 private val LightColors = lightColorScheme(
     primary = Primary,
     onPrimary = Color.White,
+    secondary = Primary,
+    onSecondary = Color.White,
+    tertiary = Line1Blue,
     background = BackgroundLight,
-    surface = SurfaceLight,
     onBackground = TextLight,
+    surface = SurfaceLight,
     onSurface = TextLight,
-    error = ErrorRed
+    surfaceVariant = SurfaceVariantLight,
+    onSurfaceVariant = TextSecondaryLight,
+    surfaceTint = Color.Transparent,
+    outline = OutlineLight,
+    outlineVariant = SurfaceVariantLight,
+    error = ErrorRed,
+    onError = Color.White
 )
 
 private val DarkColors = darkColorScheme(
     primary = PrimaryDark,
     onPrimary = Color.White,
+    secondary = PrimaryDark,
+    onSecondary = Color.White,
+    tertiary = Line1Blue,
     background = BackgroundDark,
-    surface = SurfaceDark,
     onBackground = TextDark,
+    surface = SurfaceDark,
     onSurface = TextDark,
-    error = ErrorRed
+    surfaceVariant = SurfaceVariantDark,
+    onSurfaceVariant = TextSecondaryDark,
+    surfaceTint = Color.Transparent,
+    outline = OutlineDark,
+    outlineVariant = OutlineDark,
+    error = ErrorRed,
+    onError = Color.White
 )
 
 @Composable

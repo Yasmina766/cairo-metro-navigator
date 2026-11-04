@@ -19,7 +19,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import com.yasminagbreil.metro.R
 import androidx.compose.ui.res.painterResource
@@ -27,10 +26,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.yasminagbreil.metro.ui.theme.Line1Blue
+import com.yasminagbreil.metro.ui.theme.Line2Red
+import com.yasminagbreil.metro.ui.theme.Line3Green
 import com.yasminagbreil.metro.ui.theme.Primary
-import com.yasminagbreil.metro.ui.theme.blue
-import com.yasminagbreil.metro.ui.theme.green
-import com.yasminagbreil.metro.ui.theme.red
+
 
 @Composable
 fun SplashScreen(modifier: Modifier = Modifier) {
@@ -65,9 +65,9 @@ fun SplashScreen(modifier: Modifier = Modifier) {
             Row(
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                LineDot(blue)
-                LineDot(red)
-                LineDot(green)
+                LineDot(Line1Blue)
+                LineDot(Line2Red)
+                LineDot(Line3Green)
             }
 
         }
